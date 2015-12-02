@@ -224,9 +224,8 @@ void followLine()
 
 void goStraight()
 {
-  int whiteCount = 0;
-  
   OrangutanMotors::setSpeeds(80,80);
+  int whiteCount = 0;
   while(1)
   {
     unsigned int position = robot.readLine(sensors, IR_EMITTERS_ON);
@@ -234,10 +233,10 @@ void goStraight()
     {
       whiteCount++;
     }
-    if (whiteCount > 5){
+    if (whiteCount > 50){
       waitForLine();
+      break;
     }
-    return;
   }
   
 }
@@ -245,12 +244,12 @@ void goStraight()
 void waitForLine(){
   int blackCount = 0;
   while(1){
-    if (sensors[1] > 200 && sensors[2] > 200 && sensors[3] > 200)
+    if (sensors[1] > 600 && sensors[2] > 600 && sensors[3] > 600)
     {
       blackCount++;
     }
     if (blackCount > 5){
-      return;
+      break;
     }
   } 
 }
@@ -259,18 +258,11 @@ void waitForLine(){
 // the Arduino framework.
 void loop()
 {
-  int whiteCount = 0;
-  while(1){
     followLine();
-    unsigned int position = robot.readLine(sensors, IR_EMITTERS_ON);
-    if (sensors[1] < 100 && sensors[2] < 100 && sensors[3] < 100)
+    robot.readLine(sensors, IR_EMITTERS_ON);
+    if (sensors[0] < 100 && sensors[1] < 100 && sensors[2] < 100 && sensors[3] < 100  && sensors[4] < 100)
     {
-      whiteCount++;
-    }
-    if (whiteCount > 5){
       goStraight();
     }
-    return;
-  }
   
 }
