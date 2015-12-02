@@ -244,7 +244,7 @@ void goStraight()
 void waitForLine(){
   while(1){
     robot.readLine(sensors, IR_EMITTERS_ON);
-    if (sensors[1] > 600 || sensors[2] > 600 || sensors[3] > 600)
+    if (sensors[2] > 600)
     {
       break;
     }
@@ -257,7 +257,7 @@ void loop()
 {
     followLine();
     robot.readLine(sensors, IR_EMITTERS_ON);
-    if ((sensors[1] > 600 && sensors[2] > 600 && sensors[3] > 600) && (sensors[0] > 600 || sensors[4] > 600))
+    if (sensors[0] > 600 && sensors[1] > 600 && sensors[2] > 600 && sensors[3] > 600 && sensors[4] > 600)
     {
       goStraight();
     }
