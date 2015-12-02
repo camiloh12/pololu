@@ -255,6 +255,7 @@ void loop()
     if (whiteCount > 5){
       goStraight();
     }
+    return;
   }
   
 }
