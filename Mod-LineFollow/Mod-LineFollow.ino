@@ -228,7 +228,7 @@ void goStraight()
   int whiteCount = 0;
   while(1)
   {
-    unsigned int position = robot.readLine(sensors, IR_EMITTERS_ON);
+    robot.readLine(sensors, IR_EMITTERS_ON);
     if (sensors[1] < 100 && sensors[2] < 100 && sensors[3] < 100)
     {
       whiteCount++;
