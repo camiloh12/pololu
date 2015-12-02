@@ -233,7 +233,7 @@ void goStraight()
     {
       whiteCount++;
     }
-    if (whiteCount > 50){
+    if (whiteCount > 5){
       waitForLine();
       break;
     }
@@ -242,13 +242,9 @@ void goStraight()
 }
 
 void waitForLine(){
-  int blackCount = 0;
   while(1){
-    if (sensors[1] > 600 && sensors[2] > 600 && sensors[3] > 600)
+    if (sensors[1] > 600 || sensors[2] > 600 || sensors[3] > 600)
     {
-      blackCount++;
-    }
-    if (blackCount > 5){
       break;
     }
   } 
@@ -260,7 +256,7 @@ void loop()
 {
     followLine();
     robot.readLine(sensors, IR_EMITTERS_ON);
-    if (sensors[0] < 100 && sensors[1] < 100 && sensors[2] < 100 && sensors[3] < 100  && sensors[4] < 100)
+    if ((sensors[1] > 600 && sensors[2] > 600 && sensors[3] > 600) && (sensors[0] > 600 || sensors[4] > 600))
     {
       goStraight();
     }
