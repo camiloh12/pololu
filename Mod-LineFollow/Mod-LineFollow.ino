@@ -40,7 +40,30 @@ const char demo_name_line2[] PROGMEM = "follower";
 
 // A couple of simple tunes, stored in program space.
 const char welcome[] PROGMEM = ">g32>>c32";
-const char go[] PROGMEM = "L16 cdegreg4";
+const char go[] PROGMEM = “O4 L12 c >c <<a >a”
+“O3 L12 a# >a#”
+   “L6  r”
+“L3 r”
+“O4 L12 c >c <<a >a”
+“O3 L12 a# >a#”
+   “L6  r”
+“L3 r”
+“O3 L12 f >f <d >d”
+“O3 L12 d# >d#”
+   “L6  r”
+“L3 r”
+“O3 L12 f >f <d >d”
+“O3 L12 d# >d#”
+   “L6  r”
+“O4 L6  r “
+   “L18 d# c# d”
+“O4 L6 c# d#”
+“O4 L6 d# <g#”
+“O3 L6 g >c#”
+“O4 L18 c f# f <e >a# a”
+“O4 L10 g# d# <b”
+“O3 L10 a# a g#”
+“L3 r r r”;
 
 // Data for generating the characters used in load_custom_characters
 // and display_readings.  By reading levels[] starting at various
