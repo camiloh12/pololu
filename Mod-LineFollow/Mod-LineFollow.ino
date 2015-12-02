@@ -225,6 +225,7 @@ void followLine()
 void goStraight()
 {
   int whiteCount = 0;
+  
   OrangutanMotors::setSpeeds(80,80);
   while(1)
   {
@@ -234,10 +235,24 @@ void goStraight()
       whiteCount++;
     }
     if (whiteCount > 5){
-      return;
+      waitForLine();
     }
+    return;
   }
   
+}
+
+void waitForLine(){
+  int blackCount = 0;
+  while(1){
+    if (sensors[1] > 200 && sensors[2] > 200 && sensors[3] > 200)
+    {
+      blackCount++;
+    }
+    if (blackCount > 5){
+      return;
+    }
+  } 
 }
 
 // The main function.  This function is repeatedly called by
