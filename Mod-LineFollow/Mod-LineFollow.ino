@@ -1,3 +1,50 @@
+
+
+/*   ——————  8< ——————— */
+const char maintheme[] = 
+"O7 L12 e e r e"
+"O7 L12 r c e r"
+"O7 L12 g r r r"
+"O6 L12 g r r r"
+
+"O7 L12 c r r <g"
+"O7 L12 r r e r"
+"O6 L12 r a r b"
+"O6 L12 r a# a r"
+
+"O6 L9 g >e g"
+"O7 L12 a r f g"
+"O7 L12 r e r c"
+"O7 L12 d <b r r"
+
+"O7 L12 c r r <g"
+"O7 L12 r r e r"
+"O6 L12 r a r b"
+"O6 L12 r a# a r"
+
+"O6 L9 g >e g"
+"O7 L12 a r f g"
+"O7 L12 r e r c"
+"O7 L12 d <b r r”;
+
+
+const char coin[] = "O5 L10 b L2 >e";
+
+
+const char oneup[] = "O6 L8 e g >7 c d g";
+
+
+const char fireball[] = "O4 L28 g >g >g";
+
+const char deathsound[] = "O6 T90 c32 c32 c32 r8"
+    "O5 B16 >f16 r16 f16"
+    "f16 e16 d16 c16 r16 e16 r16 c16";
+
+/*   ——————  8< ——————— */
+
+
+
+
 /*
  * PID3piLineFollower - demo code for the Pololu 3pi Robot
  * 
